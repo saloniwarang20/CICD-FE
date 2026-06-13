@@ -1,7 +1,7 @@
 pipeline{
 
     agent any
-    
+
     stages{
         stage('Install'){
             steps{
@@ -17,7 +17,7 @@ pipeline{
             steps{
                 echo 'Deploying...'
                 sh '''
-                cp -r dist/* /var/www/html/
+                sudo cp -r dist/* /var/www/html/
                 sudo systemctl restart nginx
                 '''
             }
